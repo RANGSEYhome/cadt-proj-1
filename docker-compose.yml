@@ -72,5 +72,5 @@ volumes:
   mongodbdata:
 networks:
   production-networks:
-    name: Nginx
+    name: bind
     external: true
