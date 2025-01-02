@@ -25,11 +25,11 @@ services:
       context: .
       dockerfile: Dockerfile-backend
     volumes:
-      - ./pro-my-express-cadt/src:/app/src
-      - ./pro-my-express-cadt/index.js:/app/index.js
-      - ./pro-my-express-cadt/.env:/app/.env
-      - ./pro-my-express-cadt/uploads:/app/uploads
-      - ./pro-my-express-cadt/index.html:/app/index.html
+      - ./backend/src:/app/src
+      - ./backend/index.js:/app/index.js
+      - ./backend/.env:/app/.env
+      - ./backend/uploads:/app/uploads
+      - ./backend/index.html:/app/index.html
     scale: 1
     depends_on:
       - mongodb

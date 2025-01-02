@@ -3,8 +3,8 @@ RUN npm install -g serve
 WORKDIR /app
 
 # Copy only the dependency files first
-COPY ./pro-vue-admin-core-main/package.json ./pro-vue-admin-core-main/package-lock.json ./
-COPY ./pro-vue-admin-core-main/ ./
+COPY ./frontend/package.json ./frontend/package-lock.json ./
+COPY ./frontend/ ./
 RUN npm install
 
 # Copy the application files excluding unnecessary items (.dockerignore handles this)
