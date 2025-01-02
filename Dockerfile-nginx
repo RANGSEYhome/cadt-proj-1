@@ -1,11 +1,11 @@
 FROM nginx:1.20.0-alpine
 
-COPY ./frontend/nginx/entrypoint-nginx.sh /
+COPY ./backend/nginx/entrypoint-nginx.sh /
 
 RUN set -ex && \
     apk add --no-cache bash && \
     chmod +x /entrypoint-nginx.sh
 
-COPY ./frontend/nginx/vhost.template /etc/nginx/conf.d/vhost.template
+COPY ./backend/nginx/vhost.template /etc/nginx/conf.d/vhost.template
 
 CMD ["/entrypoint-nginx.sh"] 
