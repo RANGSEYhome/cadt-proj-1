@@ -1,0 +1,11 @@
+FROM nginx:1.20.0-alpine
+
+COPY ./pro-my-express-cadt/nginx/entrypoint-nginx.sh /
+
+RUN set -ex && \
+    apk add --no-cache bash && \
+    chmod +x /entrypoint-nginx.sh
+
+COPY ./pro-my-express-cadt/nginx/vhost.template /etc/nginx/conf.d/vhost.template
+
+CMD ["/entrypoint-nginx.sh"] 
